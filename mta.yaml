@@ -1,0 +1,40 @@
+﻿ID: iscpplanning_backend
+_schema-version: 3.1.0
+description: 'ISCPPLANNING service module'
+version: 1.0.0
+
+modules:
+    -
+        name: db
+        type: hdb
+        path: db
+        requires:
+            - {name: hdi}
+        provides:
+            - {name: db, public: true}
+        parameters:
+            memory: 256M
+            disk-quota: 256M
+    -
+        name: srv
+        type: nodejs
+        path: srv
+        properties:
+            XS_APP_LOG_LEVEL: debug
+        parameters:
+            memory: 256M
+            disk-quota: 1024M
+        provides:
+            - {name: srv, public: true, properties: {url: '${default-url}'}}
+        requires:
+            - {name: db}
+            - {name: hdi}
+            - {name: uaa}
+resources:
+    -
+        name: hdi
+        type: org.cloudfoundry.existing-service
+    -
+        name: uaa
+        type: org.cloudfoundry.existing-service
+

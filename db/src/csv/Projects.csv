@@ -1,0 +1,6 @@
+ID,STARTAT,FINISHAT,DESCRIPTION,NAME,EXTERNALID,PROJECTTYPE,DEPARTMENTID
+29985d14-af01-4cbf-9c57-976b37194c97,2017-10-09,2018-10-09,"OUR SUPER MEGA FUTURE PROJECT","Demo project",29985d14-af01-4cbf-9c57-976b37194c97,external,489cd2f7-5bba-467e-a856-e558e5b6e202
+b23db156-3e7c-4f7b-b330-61451586f560,2018-05-09,2019-05-09,"Create something from nothing","Education project",b23db156-3e7c-4f7b-b330-61451586f560,external,f347957d-6ad7-46b3-8f62-18be6c13c3fa
+ea5a0593-2a69-4118-acef-c9418c81a1bc,2019-01-10,2020-01-10,"May the force be with you","SpaceX",ea5a0593-2a69-4118-acef-c9418c81a1bc,external,e98bea58-b267-4f5e-b4b4-179307123804
+af0afe99-7d6e-41e1-986a-fa923fa63269,2019-01-10,2020-11-11,"For the night is dark and full of terrors","Project Hanks",af0afe99-7d6e-41e1-986a-fa923fa63269,external,4c995915-1105-4e2e-907f-2135a5592c9b
+47899f43-d1a0-4813-936d-a0227c7160b4,2019-06-11,2021-03-15,"Some description","Crew Dragon",47899f43-d1a0-4813-936d-a0227c7160b4,external,37f15035-3bff-4f5c-b43f-9731a2d57e4b

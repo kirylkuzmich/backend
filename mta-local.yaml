@@ -1,0 +1,30 @@
+﻿ID: local_iscpplanning
+_schema-version: 3.1.0
+description: 'ISCPPLANNING service module'
+version: 1.0.0
+
+resources:
+    -
+        name: shared_hdi
+        parameters:
+            service-plan: hdi-shared
+            service: hana
+            config: {schema: SHARED, database_id: 14ea984b-f4d9-4970-8cef-601b309a8eea}
+            shared: true
+        properties:
+            hdi-container-name: '${service-name}'
+        type: com.sap.xs.hdi-container
+
+
+modules:
+    -
+        name: shared_db
+        type: hdb
+        path: db
+        requires:
+            - {name: shared_hdi}
+        provides:
+            - {name: shared_db, public: true}
+        parameters:
+            memory: 256M
+            disk-quota: 256M

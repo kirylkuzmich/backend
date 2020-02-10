@@ -1,0 +1,116 @@
+stages:
+  - analysis
+  - build
+  - deploy
+
+cache:
+  paths:
+   - backend.mtar
+   - node_modules/
+
+.sonar_script: &sonar_script |
+  gitlab-sonar-scanner \
+      -Dsonar.host.url=http://192.168.1.48:9000 \
+      -Dsonar.projectKey=PLANNING_BACKEND \
+      -Dsonar.sources=srv \
+      -Dsonar.exclusions=**/node_modules/**,**/test/**,**/localService/** \
+      -Dsonar.gitlab.user_token=vCJxykfyH7HMKGrxUGbP \
+      -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA \
+      -Dsonar.gitlab.project_id=374 \
+      -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME \
+      -Dsonar.gitlab.failure_notification_mode=exit-code \
+      -Dsonar.login=40cbd629c24510ca2a9fd5fa1bda78abee6bd1e0
+
+
+
+analysis:
+  image: ciricihq/gitlab-sonar-scanner
+  stage: analysis
+  variables:
+    SONAR_URL: http://192.168.1.48:9000
+    SONAR_ANALYSIS_MODE: publish
+  script:
+    - *sonar_script
+  tags:
+    - backend
+  except:
+    refs:
+      - leverx_hana
+
+build:
+  image: vshmidty/mta_builder
+  stage: build
+  script:
+    - mtaBuild  --mtar=backend.mtar --build-target=CF build
+  tags:
+    - backend
+  except:
+    refs:
+      - leverx_hana
+      - backend_prod
+      - backend_qas
+
+deploy:
+  image: ppiper/cf-cli
+  stage: deploy
+  before_script:
+    - cf login -a $CF_API -u "$CF_USER" -p "$CF_PASS" -o "$CF_ORG" -s "$CF_DEV_SPACE"
+  script:
+    - cf deploy backend.mtar -f
+  tags:
+    - backend
+  only:
+    refs:
+      - backend
+
+build_local:
+  image: vshmidty/mta_builder
+  stage: build
+  script:
+    - mv mta-local.yaml mta.yaml
+    - mtaBuild  --mtar=backend.mtar --build-target=CF build
+  tags:
+    - backend
+  only:
+    refs:
+      - leverx_hana
+
+deploy_local:
+  image: ppiper/cf-cli
+  stage: deploy
+  before_script:
+    - cf login -a $CF_LOCAL_API -u "$CF_LOCAL_USER" -p "$CF_LOCAL_PASS" -o "$CF_LOCAL_ORG" -s "$CF_LOCAL_SPACE"
+  script:
+    - cf deploy backend.mtar -f
+  tags:
+    - backend
+  only:
+    refs:
+      - leverx_hana
+
+
+
+qas_build:
+  image: vshmidty/mta_builder
+  stage: build
+  script:
+    - mv mta-qas.yaml mta.yaml
+    - mtaBuild  --mtar=backend.mtar --build-target=CF build
+  tags:
+    - backend
+  only:
+    refs:
+      - backend_qas
+
+qas_deploy:
+  image: ppiper/cf-cli
+  stage: deploy
+  before_script:
+    - cf login -a $CF_API -u "$CF_USER" -p "$CF_PASS" -o "$CF_ORG" -s "$CF_PROD_SPACE"
+  script:
+    - cf deploy backend.mtar -f
+  tags:
+    - backend
+  only:
+    refs:
+      - backend_qas

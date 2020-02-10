@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "PLANNINGENTITIES_PROJECTS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "Projects.csv",
+        "has_header": true
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "EXTERNALID",
+          "STARTAT",
+          "FINISHAT",
+          "DESCRIPTION",
+          "NAME",
+          "PROJECTTYPE",
+          "DEPARTMENTID"
+        ]
+      }
+    },
+    {
+      "target_table": "PLANNINGENTITIES_EMPLOYEES",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "Employees.csv",
+        "has_header": true
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "EXTERNALID",
+          "EMAILADDRESS",
+          "NAME"
+        ]
+      }
+    },
+    {
+      "target_table": "PLANNINGENTITIES_POSITIONS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "Positions.csv",
+        "has_header": true
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "RANK"
+        ]
+      }
+    },
+    {
+      "target_table": "PLANNINGENTITIES_PROJECTASSIGNMENTS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "ProjectAssignments.csv",
+        "has_header": true
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID","STARTAT","FINISHAT","INVOLVEPERCENT","PROJECT_ID","EMPLOYEE_ID","POSITION_ID","PROJECTID","EMPLOYEEID"
+        ]
+      }
+    },
+    {
+      "target_table": "PLANNINGENTITIES_REPORTEDHOURS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "ReportedHours.csv",
+        "has_header": true
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "DATE",
+          "HOURS",
+          "PROJECTASSIGNMENTS_ID"
+        ]
+      }
+    }
+  ]
+}

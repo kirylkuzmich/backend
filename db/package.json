@@ -1,0 +1,13 @@
+{
+  "name": "db",
+  "dependencies": {
+    "@sap/hdi-deploy": "latest"
+  },
+  "engines": {
+    "node": "^12.x"
+  },
+  "scripts": {
+    "postinstall": "node .build.js",
+    "start": "node node_modules/@sap/hdi-deploy/deploy.js"
+  }
+}

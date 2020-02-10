@@ -1,0 +1,268 @@
+ //MOCK data for service
+
+module.exports = srv => {
+
+    srv.on('READ', 'Projects', () => [
+        {
+            ID: "29985d14-af01-4cbf-9c57-976b37194c97",
+            externalID: "29985d14-af01-4cbf-9c57-976b37194c97",
+            name: "Demo project",
+            projectType: "external",
+            departmentID: "489cd2f7-5bba-467e-a856-e558e5b6e202",
+            startAt: "2019-10-09T00:00:00.000Z",
+            finishAt: "2019-08-09T00:00:00.000Z",
+            projectAssignments: [
+                {
+                    ID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b",
+                    involvePercent: 100,
+                    startAt: "2019-02-10T00:00:00.000Z",
+                    finishAt: "2019-05-01T00:00:00.000Z",
+                    employeeID: "4088c9d0-d0d3-494d-ad40-2195c7287948",
+                    positionID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823",
+                    employee: {
+                        ID: "4088c9d0-d0d3-494d-ad40-2195c7287948", name: "John Snow", emailAddress: "JohnSnow@gmail.com", externalID: "4088c9d0-d0d3-494d-ad40-2195c7287948"
+                    },
+                    reportedHours: [
+                        {ID: "3dab9717-fb79-4ba9-881f-3b854a2ac730", date: "2019-08-19", hours: 8, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+                        {ID: "4102621e-a9d6-4be8-954b-69c3f8af86cb", date: "2019-08-12", hours: 6, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+                    ],
+                    position: {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: 1},
+                },
+            ],
+        },
+        {
+            ID: "b23db156-3e7c-4f7b-b330-61451586f560",
+            externalID: "b23db156-3e7c-4f7b-b330-61451586f560",
+            name: "Education project",
+            projectType: "external",
+            departmentID: "f347957d-6ad7-46b3-8f62-18be6c13c3fa",
+            startAt: "2019-05-09T00:00:00.000Z",
+            finishAt: "2019-05-09T00:00:00.000Z",
+            projectAssignments: [
+                {
+                    ID: "8cff40b1-acf5-4175-a7c4-14f9562c2703", involvePercent: 75,  startAt: "2019-08-01T00:00:00.000Z", finishAt: "2019-05-10T00:00:00.000Z",
+                    employeeID: "0524aa77-03aa-4d94-924d-877dc4d66359",
+                    positionID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823",
+                    employee: {
+                        ID: "0524aa77-03aa-4d94-924d-877dc4d66359", name: "Petr Petrov", emailAddress: "PetrPetrov@gmail.com", externalID: "0524aa77-03aa-4d94-924d-877dc4d66359"
+                    },
+                    reportedHours: [
+                        {ID: "5ac71c4a-3709-4e67-a0af-8bb9c4fb577d", date: "2019-08-20", hours: 8, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+                        {ID: "fd3d0563-6726-4e3d-ba03-4d6a7fea627b", date: "2019-08-13", hours: 6, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+                    ],
+                    position: {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: 1},
+                },
+            ]
+        },
+        {
+            ID: "ea5a0593-2a69-4118-acef-c9418c81a1bc",
+            externalID: "ea5a0593-2a69-4118-acef-c9418c81a1bc",
+            name: "SpaceX",
+            projectType: "external",
+            departmentID: "e98bea58-b267-4f5e-b4b4-179307123804",
+            startAt: "2019-01-10T00:00:00.000Z",
+            finishAt: "2019-01-10T00:00:00.000Z"
+        },
+        {
+            ID: "af0afe99-7d6e-41e1-986a-fa923fa63269",
+            externalID: "af0afe99-7d6e-41e1-986a-fa923fa63269",
+            name: "Project Hanks",
+            projectType: "external",
+            departmentID: "4c995915-1105-4e2e-907f-2135a5592c9b",
+            startAt: "2019-01-10T00:00:00.000Z",
+            finishAt: "2019-11-11T00:00:00.000Z"
+        },
+        {
+            ID: "47899f43-d1a0-4813-936d-a0227c7160b4",
+            externalID: "47899f43-d1a0-4813-936d-a0227c7160b4",
+            name: "Crew Dragon",
+            projectType: "external",
+            departmentID: "37f15035-3bff-4f5c-b43f-9731a2d57e4b",
+            startAt: "2019-06-11T00:00:00.000Z",
+            finishAt: "2019-03-15T00:00:00.000Z"
+        },
+    ]);
+
+    srv.on('READ', 'Employees', () => [
+        {ID: "4088c9d0-d0d3-494d-ad40-2195c7287948",
+            name: "John Snow",
+            emailAddress: "JohnSnow@gmail.com",
+            externalID: "4088c9d0-d0d3-494d-ad40-2195c7287948",
+            projectAssignments: [
+                {ID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b",
+                    involvePercent: 100,
+                    startAt: "2019-02-10T00:00:00.000Z",
+                    finishAt: "2019-05-01T00:00:00.000Z",
+                    projectID: "29985d14-af01-4cbf-9c57-976b37194c97",
+                    positionID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823",
+                    project:  {
+                        ID: "29985d14-af01-4cbf-9c57-976b37194c97",
+                        externalID: "29985d14-af01-4cbf-9c57-976b37194c97",
+                        name: "Demo project",
+                        projectType: "external",
+                        departmentID: "489cd2f7-5bba-467e-a856-e558e5b6e202",
+                        startAt: "2019-10-09T00:00:00.000Z",
+                        finishAt: "2019-08-09T00:00:00.000Z"
+                    },
+                    reportedHours: [
+                        {ID: "3dab9717-fb79-4ba9-881f-3b854a2ac730", date: "2019-08-19", hours: 8, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+                        {ID: "4102621e-a9d6-4be8-954b-69c3f8af86cb", date: "2019-08-12", hours: 6, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+                    ],
+                    position: {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: 1},
+                },
+            ]
+        },
+        {ID: "0524aa77-03aa-4d94-924d-877dc4d66359", name: "Petr Petrov",     emailAddress: "PetrPetrov@gmail.com", externalID: "0524aa77-03aa-4d94-924d-877dc4d66359",
+            projectAssignments: [
+                {ID: "8cff40b1-acf5-4175-a7c4-14f9562c2703", involvePercent: 75,  startAt: "2019-08-01T00:00:00.000Z", finishAt: "2019-05-10T00:00:00.000Z",
+                    projectID: "b23db156-3e7c-4f7b-b330-61451586f560",
+                    positionID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823",
+                    project:  {
+                        ID: "b23db156-3e7c-4f7b-b330-61451586f560",
+                        externalID: "b23db156-3e7c-4f7b-b330-61451586f560",
+                        name: "Education project",
+                        projectType: "external",
+                        departmentID: "f347957d-6ad7-46b3-8f62-18be6c13c3fa",
+                        startAt: "2019-05-09T00:00:00.000Z",
+                        finishAt: "2019-05-09T00:00:00.000Z"
+                    },
+                    reportedHours: [
+                        {ID: "5ac71c4a-3709-4e67-a0af-8bb9c4fb577d", date: "2019-08-20", hours: 8, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+                        {ID: "fd3d0563-6726-4e3d-ba03-4d6a7fea627b", date: "2019-08-13", hours: 6, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+                    ],
+                    position: {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: 1},
+                },
+            ],
+        },
+        {ID: "f45a6c79-540f-4d90-8bc8-620404940ed8", name: "Ivan Ivanov",     emailAddress: "IvanIvanov@gmail.com", externalID: "f45a6c79-540f-4d90-8bc8-620404940ed8"},
+        {ID: "d4095d36-e62e-4daf-a9e0-47dfa8cffa9a", name: "Valar Morghulis", emailAddress: "Anfaced@gmail.com",    externalID: "d4095d36-e62e-4daf-a9e0-47dfa8cffa9a"},
+        {ID: "74941f57-2d56-464d-9cd1-c8c8a1d2a839", name: "John Lennon",     emailAddress: "JohnLennon@gmail.com", externalID: "74941f57-2d56-464d-9cd1-c8c8a1d2a839"},
+    ]);
+
+    srv.on('READ', 'ProjectAssignments', () => [
+        {ID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b", involvePercent: 100, startAt: "2019-02-10T00:00:00.000Z", finishAt: "2019-05-01T00:00:00.000Z",
+            employeeID: "4088c9d0-d0d3-494d-ad40-2195c7287948",
+            projectID: "29985d14-af01-4cbf-9c57-976b37194c97",
+            positionID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823",
+            project:  {
+                ID: "29985d14-af01-4cbf-9c57-976b37194c97",
+                externalID: "29985d14-af01-4cbf-9c57-976b37194c97",
+                name: "Demo project",
+                projectType: "external",
+                departmentID: "489cd2f7-5bba-467e-a856-e558e5b6e202",
+                startAt: "2019-10-09T00:00:00.000Z",
+                finishAt: "2019-08-09T00:00:00.000Z"
+            },
+            employee: {ID: "4088c9d0-d0d3-494d-ad40-2195c7287948", name: "John Snow", emailAddress: "JohnSnow@gmail.com", externalID: "4088c9d0-d0d3-494d-ad40-2195c7287948",},
+            reportedHours: [
+                {ID: "3dab9717-fb79-4ba9-881f-3b854a2ac730", date: "2019-08-19", hours: 8, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+                {ID: "4102621e-a9d6-4be8-954b-69c3f8af86cb", date: "2019-08-12", hours: 6, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+            ],
+            position: {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: 1},
+        },
+        {ID: "8cff40b1-acf5-4175-a7c4-14f9562c2703", involvePercent: 75,  startAt: "2019-08-01T00:00:00.000Z", finishAt: "2019-05-10T00:00:00.000Z",
+            employeeID: "0524aa77-03aa-4d94-924d-877dc4d66359",
+            projectID: "b23db156-3e7c-4f7b-b330-61451586f560",
+            positionID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823",
+            project:  {
+                ID: "b23db156-3e7c-4f7b-b330-61451586f560",
+                externalID: "b23db156-3e7c-4f7b-b330-61451586f560",
+                name: "Education project",
+                projectType: "external",
+                departmentID: "f347957d-6ad7-46b3-8f62-18be6c13c3fa",
+                startAt: "2019-05-09T00:00:00.000Z",
+                finishAt: "2019-05-09T00:00:00.000Z"
+            },
+            employee: {
+                ID: "0524aa77-03aa-4d94-924d-877dc4d66359", name: "Petr Petrov",     emailAddress: "PetrPetrov@gmail.com", externalID: "0524aa77-03aa-4d94-924d-877dc4d66359"
+            },
+            reportedHours: [
+                {ID: "5ac71c4a-3709-4e67-a0af-8bb9c4fb577d", date: "2019-08-20", hours: 8, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+                {ID: "fd3d0563-6726-4e3d-ba03-4d6a7fea627b", date: "2019-08-13", hours: 6, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+            ],
+            position: {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: 1},
+        },
+        {ID: "26cc8d0c-73b4-4557-b659-ffb51488d05c", involvePercent: 75,  startAt: "2019-11-10T00:00:00.000Z", finishAt: "2019-10-10T00:00:00.000Z",
+            employeeID: "f45a6c79-540f-4d90-8bc8-620404940ed8",
+            projectID: "ea5a0593-2a69-4118-acef-c9418c81a1bc",
+            positionID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92",
+            project:  {
+                ID: "ea5a0593-2a69-4118-acef-c9418c81a1bc",
+                externalID: "ea5a0593-2a69-4118-acef-c9418c81a1bc",
+                name: "SpaceX",
+                projectType: "external",
+                departmentID: "e98bea58-b267-4f5e-b4b4-179307123804",
+                startAt: "2019-01-10T00:00:00.000Z",
+                finishAt: "2019-01-10T00:00:00.000Z"
+            },
+            employee: {
+                ID: "f45a6c79-540f-4d90-8bc8-620404940ed8", name: "Ivan Ivanov",     emailAddress: "IvanIvanov@gmail.com", externalID: "f45a6c79-540f-4d90-8bc8-620404940ed8"
+            },
+            reportedHours: [
+                {ID: "489a24e1-116b-4fae-acf8-89f8957a6726", date: "2019-08-12", hours: 8, projectAssignmentsID: "26cc8d0c-73b4-4557-b659-ffb51488d05c"},
+                {ID: "987d4e4d-b61f-48f4-9304-db130797bb74", date: "2019-08-14", hours: 6, projectAssignmentsID: "26cc8d0c-73b4-4557-b659-ffb51488d05c"}
+            ],
+            position: {ID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92", rank: 2},
+        },
+        {ID: "634b1e57-a36b-4dd7-813d-e09ade583968", involvePercent: 25,  startAt: "2019-07-03T00:00:00.000Z", finishAt: "2019-11-01T00:00:00.000Z",
+            employeeID: "d4095d36-e62e-4daf-a9e0-47dfa8cffa9a",
+            projectID: "af0afe99-7d6e-41e1-986a-fa923fa63269",
+            positionID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92",
+            project:  {
+                ID: "af0afe99-7d6e-41e1-986a-fa923fa63269",
+                externalID: "af0afe99-7d6e-41e1-986a-fa923fa63269",
+                name: "Project Hanks",
+                projectType: "external",
+                departmentID: "4c995915-1105-4e2e-907f-2135a5592c9b",
+                startAt: "2019-01-10T00:00:00.000Z",
+                finishAt: "2019-11-11T00:00:00.000Z"
+            },
+            employee: {ID: "d4095d36-e62e-4daf-a9e0-47dfa8cffa9a", name: "Valar Morghulis", emailAddress: "Anfaced@gmail.com", externalID: "d4095d36-e62e-4daf-a9e0-47dfa8cffa9a"},
+            reportedHours: [
+                {ID: "ba88c881-26a3-49aa-99c2-85a400d59705", date: "2019-08-13", hours: 8, projectAssignmentsID: "634b1e57-a36b-4dd7-813d-e09ade583968"},
+                {ID: "0441a9bc-5132-4f2c-b8ce-16bc9e91fffb", date: "2019-08-21", hours: 6, projectAssignmentsID: "634b1e57-a36b-4dd7-813d-e09ade583968"},
+            ],
+            position: {ID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92", rank: 2},
+        },
+        {ID: "eac7e28e-d137-4a03-9e0f-2a5773d38cf7", involvePercent: 100, startAt: "2019-09-10T00:00:00.000Z", finishAt: "2019-12-01T00:00:00.000Z",
+            employeeID: "74941f57-2d56-464d-9cd1-c8c8a1d2a839",
+            projectID: "47899f43-d1a0-4813-936d-a0227c7160b4",
+            positionID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92",
+            project:  {
+                ID: "47899f43-d1a0-4813-936d-a0227c7160b4",
+                externalID: "47899f43-d1a0-4813-936d-a0227c7160b4",
+                name: "Crew Dragon",
+                projectType: "external",
+                departmentID: "37f15035-3bff-4f5c-b43f-9731a2d57e4b",
+                startAt: "2019-06-11T00:00:00.000Z",
+                finishAt: "2019-03-15T00:00:00.000Z"
+            },
+            employee: {
+                ID: "74941f57-2d56-464d-9cd1-c8c8a1d2a839", name: "John Lennon",     emailAddress: "JohnLennon@gmail.com", externalID: "74941f57-2d56-464d-9cd1-c8c8a1d2a839"
+            },
+            reportedHours: [
+                {ID: "020c0d72-c2b7-46d1-9f6a-0790ee416704", date: "2019-08-19", hours: 6, projectAssignmentsID: "eac7e28e-d137-4a03-9e0f-2a5773d38cf7"},
+            ],
+            position: {ID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92", rank: 2},
+        },
+    ]);
+
+    srv.on('READ', 'Positions', () => [
+        {ID: "22f5b6ef-5cb5-49d9-9b24-70fd0e4a2823", rank: "1"},
+        {ID: "1c57ae9e-e4f3-4936-8315-777d3aa33c92", rank: "2"},
+        {ID: "7e883f65-1cba-4985-977d-97b3f4f85bea", rank: "3"},
+        {ID: "c585f9c9-a797-4b14-a90c-891ae59e0da5", rank: "4"},
+    ]);
+
+    srv.on('READ', 'ReportedHours', () => [
+        {ID: "3dab9717-fb79-4ba9-881f-3b854a2ac730", date: "2019-08-19", hours: 8, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+        {ID: "5ac71c4a-3709-4e67-a0af-8bb9c4fb577d", date: "2019-08-20", hours: 8, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+        {ID: "489a24e1-116b-4fae-acf8-89f8957a6726", date: "2019-08-12", hours: 8, projectAssignmentsID: "26cc8d0c-73b4-4557-b659-ffb51488d05c"},
+        {ID: "ba88c881-26a3-49aa-99c2-85a400d59705", date: "2019-08-13", hours: 8, projectAssignmentsID: "634b1e57-a36b-4dd7-813d-e09ade583968"},
+        {ID: "020c0d72-c2b7-46d1-9f6a-0790ee416704", date: "2019-08-19", hours: 6, projectAssignmentsID: "eac7e28e-d137-4a03-9e0f-2a5773d38cf7"},
+        {ID: "4102621e-a9d6-4be8-954b-69c3f8af86cb", date: "2019-08-12", hours: 6, projectAssignmentsID: "257a3f7a-5bcd-4217-84e8-cf869c96ff8b"},
+        {ID: "fd3d0563-6726-4e3d-ba03-4d6a7fea627b", date: "2019-08-13", hours: 6, projectAssignmentsID: "8cff40b1-acf5-4175-a7c4-14f9562c2703"},
+        {ID: "987d4e4d-b61f-48f4-9304-db130797bb74", date: "2019-08-14", hours: 6, projectAssignmentsID: "26cc8d0c-73b4-4557-b659-ffb51488d05c"},
+        {ID: "0441a9bc-5132-4f2c-b8ce-16bc9e91fffb", date: "2019-08-21", hours: 6, projectAssignmentsID: "634b1e57-a36b-4dd7-813d-e09ade583968"},
+    ]);
+};

@@ -1,0 +1,11 @@
+﻿*.iml
+.mta
+.idea
+node_modules/
+gen
+db/src/gen/
+dist/
+build/
+*.mtar
+.vscode
+.jar

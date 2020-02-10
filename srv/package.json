@@ -1,0 +1,51 @@
+{
+  "name": "srv",
+  "description": "Generated from ../package.json, do not change!",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/audit-logging": "latest",
+    "@sap/cds": "latest",
+    "@sap/cds-ql": "latest",
+    "@sap/hana-client": "latest",
+    "@sap/hdbext": "latest",
+    "@sap/logging": "latest",
+    "@sap/textbundle": "latest",
+    "@sap/xsenv": "latest",
+    "@sap/xssec": "latest",
+    "accept-language-parser": "latest",
+    "async": "latest",
+    "axios": "latest",
+    "body-parser": "latest",
+    "compression": "latest",
+    "cron": "latest",
+    "express": "latest",
+    "hdb": "latest",
+    "passport": "latest",
+    "perf_hooks": "latest",
+    "promise-timeout": "latest",
+    "request": "latest",
+    "request-promise": "latest",
+    "then-request": "latest",
+    "ws": "latest"
+  },
+  "engines": {
+    "node": "^12.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "postinstall": "npm dedupe && node .build.js",
+    "start": "node --experimental-worker server.js",
+    "debug": "node %NODE_DEBUG_OPTION% server.js --debug"
+  },
+  "private": true,
+  "i18n": {
+    "folders": [
+      "i18n"
+    ]
+  },
+  "cds": {
+    "data": {
+      "driver": "hana"
+    }
+  }
+}
